@@ -36,7 +36,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const iconTemplate = path.resolve(`src/templates/icon.js`)
+  const iconPageTemplate = path.resolve(`src/templates/icon-page.js`)
 
   const result = await graphql(`
     {
@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allIcon.nodes.forEach(icon => {
     actions.createPage({
       path: icon.slug,
-      component: iconTemplate,
+      component: iconPageTemplate,
       context: {
         name: icon.name,
         width: icon.width,
