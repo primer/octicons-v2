@@ -22,6 +22,7 @@ export default function ColorModeToggle() {
         color: "text",
         background: "transparent",
         border: "1px solid",
+        borderColor: "border",
       }}
     >
       {mode}
