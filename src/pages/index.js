@@ -3,6 +3,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import groupBy from "lodash.groupby"
 import { jsx } from "theme-ui"
 import Layout from "../components/layout"
+import Head from "../components/head"
 
 export default function App() {
   const data = useStaticQuery(graphql`
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <Layout>
+      <Head />
       <div
         sx={{
           display: "grid",

@@ -2,6 +2,7 @@
 import React from "react"
 import { jsx, useThemeUI } from "theme-ui"
 import Layout from "../components/layout"
+import Head from "../components/head"
 
 export default function Icon({ pageContext }) {
   const { name, width, height, viewBox, contents } = pageContext
@@ -10,6 +11,7 @@ export default function Icon({ pageContext }) {
 
   return (
     <Layout>
+      <Head title={`${name} (${width}×${height})`} />
       <h1 sx={{ mt: 0, mb: 2, fontSize: 5, fontWeight: "bold" }}>{name}</h1>
       <p sx={{ mt: 0, mb: 4 }}>
         {width}×{height}
