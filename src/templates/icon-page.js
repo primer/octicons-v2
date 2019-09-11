@@ -5,6 +5,7 @@ import Icon from "../components/icon"
 import IconViewer from "../components/icon-viewer"
 import Layout from "../components/layout"
 import Specimens16 from "../components/specimens-16"
+import Specimens24 from "../components/specimens-24"
 
 export default function IconPage({ pageContext }) {
   const { name, width, height, viewBox, contents } = pageContext
@@ -45,6 +46,8 @@ function Specimens({ size, icon }) {
   switch (size) {
     case 16:
       return <Specimens16 icon={icon} />
+    case 24:
+      return <Specimens24 icon={icon} />
     default:
       return <p sx={{ mt: 0, mb: 3 }}>No specimens available</p>
   }
