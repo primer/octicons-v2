@@ -49,9 +49,9 @@ export default function Specimens16({ icon: Icon }) {
         />
         <span contentEditable>Label</span>
       </span>
-      <span
+      <div
         sx={{
-          display: "inline-flex",
+          display: "flex",
           bg: "border",
           justifyContent: "center",
           alignItems: "center",
@@ -61,10 +61,10 @@ export default function Specimens16({ icon: Icon }) {
         }}
       >
         <Icon />
-      </span>
-      <span
+      </div>
+      <div
         sx={{
-          display: "inline-flex",
+          display: "flex",
           bg: "text",
           color: "background",
           justifyContent: "center",
@@ -75,7 +75,7 @@ export default function Specimens16({ icon: Icon }) {
         }}
       >
         <Icon />
-      </span>
+      </div>
     </div>
   )
 }
