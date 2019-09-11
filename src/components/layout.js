@@ -34,6 +34,18 @@ export default function Layout({ children }) {
           sx={{ fontWeight: "bold", color: "inherit", textDecoration: "none" }}
         >
           Octicons Viewer
+          <span
+            sx={{
+              fontSize: 0,
+              bg: "warningBg",
+              py: 1,
+              px: 2,
+              ml: 2,
+              borderRadius: 1,
+            }}
+          >
+            WIP
+          </span>
         </Link>
         <ColorModeToggle />
       </header>
