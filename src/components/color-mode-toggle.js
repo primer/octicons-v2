@@ -23,6 +23,7 @@ export default function ColorModeToggle() {
         background: "transparent",
         border: "1px solid",
         borderColor: "border",
+        borderRadius: 1,
       }}
     >
       {mode}

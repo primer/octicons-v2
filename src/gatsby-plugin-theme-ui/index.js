@@ -21,4 +21,5 @@ export default {
     bold: 600,
     body: 400,
   },
+  radii: [0, 3, 6],
 }
