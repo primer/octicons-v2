@@ -10,7 +10,7 @@ export default {
       dark: {
         text: colors.gray[2],
         background: colors.black,
-        border: colors.gray[5],
+        border: colors.gray[6],
       },
     },
   },
