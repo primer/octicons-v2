@@ -5,10 +5,12 @@ export default {
   colors: {
     text: colors.gray[8],
     background: colors.white,
+    border: colors.gray[3],
     modes: {
       dark: {
         text: colors.gray[2],
         background: colors.black,
+        border: colors.gray[5],
       },
     },
   },

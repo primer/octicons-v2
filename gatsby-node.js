@@ -9,7 +9,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const filepaths = glob.sync("icons/**/*.svg")
 
   const icons = filepaths.map(filepath => {
-    const slug = slugify(path.relative("icons", filepath))
+    const slug = slugify(path.relative("icons", filepath).replace(/.svg/, ""))
     const name = path.parse(filepath).name
     const svg = fs.readFileSync(filepath, "utf8")
     const svgElement = cheerio.load(svg)("svg")
@@ -30,6 +30,43 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
         type: "Icon",
         content: JSON.stringify(icon),
         contentDigest: createContentDigest(icon),
+      },
+    })
+  })
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const iconTemplate = path.resolve(`src/templates/icon.js`)
+
+  const result = await graphql(`
+    {
+      allIcon {
+        nodes {
+          slug
+          name
+          width
+          height
+          viewBox
+          contents
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    throw result.errors
+  }
+
+  result.data.allIcon.nodes.forEach(icon => {
+    actions.createPage({
+      path: icon.slug,
+      component: iconTemplate,
+      context: {
+        name: icon.name,
+        width: icon.width,
+        height: icon.height,
+        viewBox: icon.viewBox,
+        contents: icon.contents,
       },
     })
   })
