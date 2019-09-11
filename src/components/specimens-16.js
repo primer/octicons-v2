@@ -6,11 +6,11 @@ export default function Specimens16({ icon: Icon }) {
     <div sx={{ display: "grid", gridGap: 3, justifyItems: "start" }}>
       <span>
         <Icon sx={{ mr: 1 }} />
-        <span contentEditable>Text label</span>
+        <span contentEditable>Inline text</span>
       </span>
       <span sx={{ fontSize: 1 }}>
         <Icon sx={{ mr: 1 }} />
-        <span contentEditable>Text label</span>
+        <span contentEditable>Small inline text</span>
       </span>
       <button
         sx={{
@@ -28,7 +28,7 @@ export default function Specimens16({ icon: Icon }) {
         }}
       >
         <Icon sx={{ mr: 1 }} />
-        <span contentEditable>Text label</span>
+        <span contentEditable>Button</span>
       </button>
       <span
         sx={{
@@ -47,7 +47,7 @@ export default function Specimens16({ icon: Icon }) {
             mr: 1,
           }}
         />
-        <span contentEditable>Text label</span>
+        <span contentEditable>Label</span>
       </span>
       <span
         sx={{
