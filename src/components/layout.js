@@ -37,6 +37,7 @@ export default function Layout({ children }) {
           <span
             sx={{
               fontSize: 0,
+              color: "warningText",
               bg: "warningBg",
               py: 1,
               px: 2,

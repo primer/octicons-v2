@@ -6,13 +6,15 @@ export default {
     text: colors.gray[8],
     background: colors.white,
     border: colors.gray[3],
-    warningBg: colors.yellow[3],
+    warningText: colors.gray[8],
+    warningBg: colors.yellow[4],
     modes: {
       dark: {
         text: colors.gray[1],
         background: colors.black,
         border: colors.gray[6],
-        warningBg: colors.yellow[9],
+        warningText: colors.black,
+        warningBg: colors.yellow[6],
       },
     },
   },
