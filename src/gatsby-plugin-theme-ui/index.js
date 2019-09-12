@@ -2,6 +2,7 @@ import colors from "primer-colors"
 
 export default {
   initialColorMode: "light",
+  useCustomProperties: true,
   colors: {
     text: colors.gray[8],
     background: colors.white,
