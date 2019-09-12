@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "octicons-viewer",
-  "alias": "ocitcons-viewer.now.sh",
+  "alias": "octicons-viewer.now.sh",
   "builds": [
     {
       "src": "package.json",
