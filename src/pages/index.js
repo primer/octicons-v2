@@ -44,7 +44,11 @@ export default function App() {
               }}
             >
               {icons.map(icon => (
-                <Link key={icon.slug} to={icon.slug} sx={{ color: "inherit" }}>
+                <Link
+                  key={icon.slug}
+                  to={icon.slug}
+                  sx={{ display: "flex", color: "inherit" }}
+                >
                   <svg
                     width={icon.width}
                     height={icon.height}
