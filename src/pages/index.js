@@ -4,6 +4,7 @@ import groupBy from "lodash.groupby"
 import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import Head from "../components/head"
+import Tooltip from "@tippy.js/react"
 
 export default function App() {
   const data = useStaticQuery(graphql`
@@ -11,6 +12,7 @@ export default function App() {
       allIcon {
         nodes {
           slug
+          name
           width
           height
           viewBox
@@ -44,19 +46,26 @@ export default function App() {
               }}
             >
               {icons.map(icon => (
-                <Link
+                <Tooltip
                   key={icon.slug}
-                  to={icon.slug}
-                  sx={{ display: "flex", color: "inherit" }}
+                  content={icon.name}
+                  arrow={true}
+                  arrowType="round"
+                  delay={300}
                 >
-                  <svg
-                    width={icon.width}
-                    height={icon.height}
-                    viewBox={icon.viewBox}
-                    fill="currentColor"
-                    dangerouslySetInnerHTML={{ __html: icon.contents }}
-                  />
-                </Link>
+                  <Link
+                    to={`/${icon.slug}`}
+                    sx={{ display: "flex", color: "inherit" }}
+                  >
+                    <svg
+                      width={icon.width}
+                      height={icon.height}
+                      viewBox={icon.viewBox}
+                      fill="currentColor"
+                      dangerouslySetInnerHTML={{ __html: icon.contents }}
+                    />
+                  </Link>
+                </Tooltip>
               ))}
             </div>
           </div>
