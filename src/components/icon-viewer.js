@@ -28,10 +28,11 @@ export default function IconViewer({ children }) {
       }}
     >
       <div
-        sx={{
+        sx={theme => ({
           display: "flex",
           transform: `scale(${zoom})`,
-        }}
+          boxShadow: `0 0 0 ${1 / zoom}px ${theme.colors.text}`,
+        })}
       >
         {children}
       </div>
