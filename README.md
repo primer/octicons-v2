@@ -1,7 +1,5 @@
 # Octicons Viewer
 
-test and share icons
-
 https://octicons-viewer.now.sh
 
 ## Contributing
