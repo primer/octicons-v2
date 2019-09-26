@@ -18,6 +18,8 @@
     "@sindresorhus/slugify": "^0.9.1",
     "@tippy.js/react": "^2.2.3",
     "cheerio": "^1.0.0-rc.3",
+    "copy-to-clipboard": "^3.2.0",
+    "downloadjs": "^1.4.7",
     "gatsby": "^2.15.14",
     "gatsby-plugin-manifest": "^2.2.16",
     "gatsby-plugin-react-helmet": "^3.1.7",

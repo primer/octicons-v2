@@ -1,5 +1,9 @@
 /** @jsx jsx */
+import copy from "copy-to-clipboard"
+import download from "downloadjs"
+import React from "react"
 import { jsx } from "theme-ui"
+import Button from "../components/button"
 import Head from "../components/head"
 import Icon from "../components/icon"
 import IconViewer from "../components/icon-viewer"
@@ -9,6 +13,17 @@ import Specimens24 from "../components/specimens-24"
 
 export default function IconPage({ pageContext }) {
   const { name, width, height, viewBox, contents } = pageContext
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="${width}" height="${height}">${contents}</svg>`
+
+  const [copied, setCopied] = React.useState(false)
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (copied) setCopied(false)
+    }, 1000)
+
+    return () => clearTimeout(timeout)
+  }, [copied])
 
   return (
     <Layout>
@@ -25,6 +40,27 @@ export default function IconPage({ pageContext }) {
           contents={contents}
         />
       </IconViewer>
+      <div
+        sx={{
+          mt: 3,
+          display: "grid",
+          gridTemplateColumns: ["1fr", "repeat(3, 1fr)"],
+          gridGap: 3,
+        }}
+      >
+        <Button
+          onClick={() => {
+            copy(svg)
+            setCopied(true)
+          }}
+        >
+          {copied ? "Copied" : "Copy SVG"}
+        </Button>
+        <Button onClick={() => download(svg, `${name}.svg`, "image/svg+xml")}>
+          Download SVG
+        </Button>
+        <Button disabled>Download PDF</Button>
+      </div>
       <h2 sx={{ mt: 4, mb: 3, fontWeight: "bold", fontSize: 4 }}>Specimens</h2>
       <Specimens
         size={width}

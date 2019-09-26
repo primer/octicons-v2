@@ -52,7 +52,7 @@ export default function Specimens16({ icon: Icon }) {
       <div
         sx={{
           display: "flex",
-          bg: "border",
+          bg: "muted",
           justifyContent: "center",
           alignItems: "center",
           width: 32,

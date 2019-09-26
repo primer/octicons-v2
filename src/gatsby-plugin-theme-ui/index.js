@@ -7,6 +7,7 @@ export default {
     text: colors.gray[8],
     background: colors.white,
     border: colors.gray[3],
+    muted: colors.gray[2],
     warningText: colors.gray[8],
     warningBg: colors.yellow[4],
     modes: {
@@ -14,6 +15,7 @@ export default {
         text: colors.gray[1],
         background: colors.black,
         border: colors.gray[6],
+        muted: colors.gray[8],
         warningText: colors.black,
         warningBg: colors.yellow[6],
       },
