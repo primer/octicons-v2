@@ -5,6 +5,10 @@
       "removeAttrs": {
         "attrs": "fill"
       }
-    }
+    },
+    { "convertPathData": false },
+    { "cleanupNumericValues": false },
+    { "mergePaths": false },
+    { "convertShapeToPath": false }
   ]
 }
