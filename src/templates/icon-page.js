@@ -16,6 +16,7 @@ import Specimens24 from "../components/specimens-24"
 
 export default function IconPage({ pageContext }) {
   const { name, width, height, viewBox, contents } = pageContext
+  const filename = `${name}-${width}`
   const svg = getSvg({ viewBox, width, height, contents })
   const [pdf, setPdf] = React.useState(null)
 
@@ -64,12 +65,14 @@ export default function IconPage({ pageContext }) {
         >
           {copied ? "Copied" : "Copy SVG"}
         </Button>
-        <Button onClick={() => download(svg, `${name}.svg`, "image/svg+xml")}>
+        <Button
+          onClick={() => download(svg, `${filename}.svg`, "image/svg+xml")}
+        >
           Download SVG
         </Button>
         <Button
           disabled={!pdf}
-          onClick={() => download(pdf, `${name}.pdf`, "application/pdf")}
+          onClick={() => download(pdf, `${filename}.pdf`, "application/pdf")}
         >
           Download PDF
         </Button>
