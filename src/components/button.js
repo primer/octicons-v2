@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-export default function Button(props) {
+export default function Button({ as: Component = "button", ...props }) {
   return (
-    <button
+    <Component
       sx={{
         appearance: "none",
         p: 3,
@@ -15,6 +15,7 @@ export default function Button(props) {
         border: 0,
         borderRadius: 1,
         cursor: "pointer",
+        textDecoration: "none",
         ":disabled": {
           opacity: 0.5,
           cursor: "default",

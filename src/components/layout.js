@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { Global } from "@emotion/core"
-import { jsx } from "theme-ui"
-import ColorModeToggle from "../components/color-mode-toggle"
 import { Link } from "gatsby"
+import { jsx } from "theme-ui"
+import ColorModeToggle from "./color-mode-toggle"
+import Button from "./button"
 
 export default function Layout({ children }) {
   return (
@@ -25,7 +26,8 @@ export default function Layout({ children }) {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: ["flex-start", "center"],
+          flexDirection: ["column", "row"],
           p: 3,
         }}
       >
@@ -48,7 +50,21 @@ export default function Layout({ children }) {
             WIP
           </span>
         </Link>
-        <ColorModeToggle />
+        <div sx={{ mt: [3, 0] }}>
+          <Button
+            as="a"
+            href="/octicons.zip"
+            download
+            sx={{
+              px: 3,
+              py: 2,
+              mr: 2,
+            }}
+          >
+            Download all
+          </Button>
+          <ColorModeToggle />
+        </div>
       </header>
       <main sx={{ width: "100%", maxWidth: 960, p: [4, 5], mx: "auto" }}>
         {children}

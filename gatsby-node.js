@@ -4,6 +4,10 @@ const glob = require("glob")
 const cheerio = require("cheerio")
 const trimNewlines = require("trim-newlines")
 const slugify = require("@sindresorhus/slugify")
+const Zip = require("node-zip")
+const blobStream = require("blob-stream")
+const PDFDocument = require("pdfkit")
+const svgToPdf = require("svg-to-pdfkit")
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const filepaths = glob.sync("icons/**/*.svg")
@@ -69,5 +73,77 @@ exports.createPages = async ({ graphql, actions }) => {
         contents: icon.contents,
       },
     })
+  })
+}
+
+exports.onPostBuild = async ({ graphql }) => {
+  const result = await graphql(`
+    {
+      allIcon {
+        nodes {
+          slug
+          name
+          width
+          height
+          viewBox
+          contents
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    throw result.errors
+  }
+
+  const icons = result.data.allIcon.nodes.map(async icon => {
+    const svg = getSvg({
+      viewBox: icon.viewBox,
+      width: icon.width,
+      height: icon.height,
+      contents: icon.contents,
+    })
+
+    const pdf = await getPdf({ svg, width: icon.width, height: icon.height })
+
+    return {
+      ...icon,
+      svg,
+      pdf,
+    }
+  })
+
+  Promise.all(icons).then(icons => {
+    const zip = new Zip()
+
+    icons.forEach(icon => {
+      zip
+        .folder("octicons")
+        .folder("svg")
+        .file(`${icon.name}-${icon.width}.svg`, icon.svg)
+
+      zip
+        .folder("octicons")
+        .folder("pdf")
+        .file(`${icon.name}-${icon.width}.pdf`, icon.pdf)
+    })
+
+    const data = zip.generate({ base64: false, compression: "DEFLATE" })
+    fs.writeFileSync("public/octicons.zip", data, "binary")
+  })
+}
+
+function getSvg({ viewBox, width, height, contents }) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="${width}" height="${height}">${contents}</svg>`
+}
+
+function getPdf({ svg, width, height }) {
+  return new Promise(resolve => {
+    let buffers = []
+    const doc = new PDFDocument({ size: [width, height] })
+    doc.on("data", buffers.push.bind(buffers))
+    doc.on("end", () => resolve(Buffer.concat(buffers)))
+    svgToPdf(doc, svg, 0, 0, { assumePt: true })
+    doc.end()
   })
 }
