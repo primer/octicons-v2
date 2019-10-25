@@ -14,8 +14,8 @@ export default function ColorModeToggle() {
         setMode(next)
       }}
       sx={{
-        px: 2,
-        py: 1,
+        px: 3,
+        py: 2,
       }}
     >
       {mode}

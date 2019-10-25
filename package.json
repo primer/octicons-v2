@@ -27,6 +27,7 @@
     "gatsby-plugin-theme-ui": "^0.2.41",
     "glob": "^7.1.4",
     "lodash.groupby": "^4.6.0",
+    "node-zip": "^1.1.1",
     "pdfkit": "^0.10.0",
     "preval.macro": "^3.0.0",
     "primer-colors": "^1.0.1",
