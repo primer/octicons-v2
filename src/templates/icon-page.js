@@ -24,15 +24,24 @@ export default function IconPage({ pageContext }) {
     getPdf({ svg, width, height }).then(blob => setPdf(blob))
   }, [svg, width, height])
 
-  const [copied, setCopied] = React.useState(false)
+  const [copiedSvg, setCopiedSvg] = React.useState(false)
+  const [copiedPdf, setCopiedPdf] = React.useState(false)
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      if (copied) setCopied(false)
+      if (copiedSvg) setCopiedSvg(false)
     }, 1000)
 
     return () => clearTimeout(timeout)
-  }, [copied])
+  }, [copiedSvg])
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (copiedPdf) setCopiedPdf(false)
+    }, 1000)
+
+    return () => clearTimeout(timeout)
+  }, [copiedPdf])
 
   return (
     <Layout>
@@ -53,22 +62,31 @@ export default function IconPage({ pageContext }) {
         sx={{
           mt: 3,
           display: "grid",
-          gridTemplateColumns: ["1fr", "repeat(3, 1fr)"],
+          gridTemplateColumns: ["1fr", "repeat(4, 1fr)"],
           gridGap: 3,
         }}
       >
         <Button
           onClick={() => {
             copy(svg)
-            setCopied(true)
+            setCopiedSvg(true)
           }}
         >
-          {copied ? "Copied" : "Copy SVG"}
+          {copiedSvg ? "Copied" : "Copy SVG"}
         </Button>
         <Button
           onClick={() => download(svg, `${filename}.svg`, "image/svg+xml")}
         >
           Download SVG
+        </Button>
+        <Button
+          disabled={!pdf}
+          onClick={() => {
+            copy(pdf)
+            setCopiedPdf(true)
+          }}
+        >
+          {copiedPdf ? "Copied" : "Copy PDF"}
         </Button>
         <Button
           disabled={!pdf}
