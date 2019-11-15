@@ -1,30 +1,30 @@
+import { observe } from "selector-observer"
 import icons from "./icons"
 
 console.log("Hello, Octicons Viewer!")
 
-// Replace Octicons on intial page load
-replaceOcticons()
+observe(".octicon:not(.replaced)", {
+  add(element) {
+    replaceOcticon(element)
+  },
+})
 
-function replaceOcticons() {
-  const octicons = document.querySelectorAll(".octicon")
+function replaceOcticon(octicon) {
+  const iconName = getIconName(octicon)
 
-  octicons.forEach(octicon => {
-    const iconName = getIconName(octicon)
+  if (!(iconName in icons)) {
+    console.warn(`Missing "${iconName}"`)
+    return
+  }
 
-    if (!(iconName in icons)) {
-      console.warn(`Missing "${iconName}"`)
-      return
-    }
+  const icon = icons[iconName]
+  const height = octicon.getAttribute("height")
+  const viewBoxSize = closestSize(Object.keys(icon), height)
 
-    const icon = icons[iconName]
-    const height = octicon.getAttribute("height")
-    const viewBoxSize = closestSize(Object.keys(icon), height)
-
-    octicon.setAttribute("viewBox", `0 0 ${viewBoxSize} ${viewBoxSize}`)
-    octicon.setAttribute("width", height)
-    octicon.classList.add("replaced")
-    octicon.innerHTML = icon[viewBoxSize]
-  })
+  octicon.setAttribute("viewBox", `0 0 ${viewBoxSize} ${viewBoxSize}`)
+  octicon.setAttribute("width", height)
+  octicon.classList.add("replaced")
+  octicon.innerHTML = icon[viewBoxSize]
 }
 
 function getIconName(octicon) {
