@@ -22,7 +22,7 @@ function replaceOcticons() {
 
     octicon.setAttribute("viewBox", `0 0 ${viewBoxSize} ${viewBoxSize}`)
     octicon.setAttribute("width", height)
-    octicons.classList.add("replaced")
+    octicon.classList.add("replaced")
     octicon.innerHTML = icon[viewBoxSize]
   })
 }
