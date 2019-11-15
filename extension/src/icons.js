@@ -7,6 +7,7 @@ const glob = require("glob")
 const cheerio = require("cheerio")
 const trimNewlines = require("trim-newlines")
 const merge = require("lodash.merge")
+const aliases = require("../../aliases.json")
 
 const filepaths = glob.sync("../icons/**/*.svg")
 
@@ -28,4 +29,9 @@ const icons = filepaths
     {}
   )
 
-module.exports = icons
+const iconsWithAliases = Object.keys(aliases).reduce((acc, iconName) => {
+  const copies = aliases[iconName].map(alias => ({ [alias]: icons[iconName] }))
+  return merge.apply(this, [acc, ...copies])
+}, icons)
+
+module.exports = iconsWithAliases
