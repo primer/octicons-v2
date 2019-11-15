@@ -26,8 +26,8 @@ const icons = filepaths
     {}
   )
 
-fs.ensureDirSync(path.join(__dirname, "build"))
+fs.ensureDirSync(path.join(__dirname, "../build"))
 fs.writeFileSync(
-  path.join(__dirname, "build/icons.json"),
+  path.join(__dirname, "../build/icons.json"),
   JSON.stringify(icons)
 )
