@@ -4,9 +4,10 @@
   "alias": "octicons-viewer.now.sh",
   "builds": [
     {
-      "src": "package.json",
+      "src": "site/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "public" }
     }
-  ]
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "/site/$1" }]
 }
