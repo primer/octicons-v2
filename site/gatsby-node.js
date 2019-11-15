@@ -9,7 +9,7 @@ const PDFDocument = require("pdfkit")
 const svgToPdf = require("svg-to-pdfkit")
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  const filepaths = glob.sync("icons/**/*.svg")
+  const filepaths = glob.sync("../icons/**/*.svg")
 
   const icons = filepaths.map(filepath => {
     const slug = slugify(path.relative("icons", filepath).replace(/.svg/, ""))
@@ -39,7 +39,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const iconPageTemplate = path.resolve(`src/templates/icon-page.js`)
+  const iconPageTemplate = path.resolve(__dirname, "src/templates/icon-page.js")
 
   const result = await graphql(`
     {
@@ -128,7 +128,11 @@ exports.onPostBuild = async ({ graphql }) => {
     })
 
     const data = zip.generate({ base64: false, compression: "DEFLATE" })
-    fs.writeFileSync("public/octicons.zip", data, "binary")
+    fs.writeFileSync(
+      path.resolve(__dirname, "public/octicons.zip"),
+      data,
+      "binary"
+    )
   })
 }
 
