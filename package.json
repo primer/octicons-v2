@@ -5,13 +5,14 @@
     "extension"
   ],
   "scripts": {
-    "develop": "concurrently --kill-others yarn:develop:*",
+    "develop": "watch \"kill-port 8000 && concurrently --kill-others yarn:develop:*\" icons",
     "develop:site": "yarn workspace site develop",
     "develop:extension": "yarn workspace extension develop",
     "svgo": "svgo icons/**/*.svg --config .svgo.json --pretty --indent 2"
   },
   "dependencies": {
     "concurrently": "4.1.0",
+    "kill-port": "^1.6.0",
     "svgo": "^1.3.2",
     "watch": "^1.0.2"
   }
