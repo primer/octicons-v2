@@ -1,0 +1,12 @@
+{
+  "name": "Octicons Viewer",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*"],
+      "js": ["build/content-script.js"]
+    }
+  ]
+}
