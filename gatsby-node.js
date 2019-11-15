@@ -5,7 +5,6 @@ const cheerio = require("cheerio")
 const trimNewlines = require("trim-newlines")
 const slugify = require("@sindresorhus/slugify")
 const Zip = require("node-zip")
-const blobStream = require("blob-stream")
 const PDFDocument = require("pdfkit")
 const svgToPdf = require("svg-to-pdfkit")
 
