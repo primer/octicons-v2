@@ -1,7 +1,8 @@
-import icons from "../build/icons.json"
+import icons from "./icons"
 
 console.log("Hello, Octicons Viewer!")
 
+// Replace Octicons on intial page load
 replaceOcticons()
 
 function replaceOcticons() {
@@ -21,6 +22,7 @@ function replaceOcticons() {
 
     octicon.setAttribute("viewBox", `0 0 ${viewBoxSize} ${viewBoxSize}`)
     octicon.setAttribute("width", height)
+    octicons.classList.add("replaced")
     octicon.innerHTML = icon[viewBoxSize]
   })
 }

@@ -6,7 +6,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.github.com/*"],
-      "js": ["build/content-script.js"]
+      "js": ["build/bundle.js"]
     }
   ]
 }
