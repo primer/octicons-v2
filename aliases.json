@@ -1,6 +1,7 @@
 {
   "bookmark": ["saved"],
   "cpu": ["circuit-board"],
+  "copy": ["clippy"],
   "bell": ["unmute"],
   "bell-slash": ["mute"]
 }
