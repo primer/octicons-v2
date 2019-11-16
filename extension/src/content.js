@@ -1,7 +1,7 @@
 import { observe } from "selector-observer"
 import icons from "./icons"
 
-console.log("Hello, Octicons Viewer!")
+console.log("Replacing Octicons...")
 
 observe(".octicon:not(.replaced)", {
   add(element) {
