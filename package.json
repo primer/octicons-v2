@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "start": "yarn develop",
-    "develop": "watch \"kill-port 8000 && concurrently --kill-others yarn:develop:*\" icons",
+    "develop": "watch \"kill-port 8000 && concurrently --kill-others yarn:develop:*\" icons --wait 0.25",
     "develop:site": "yarn workspace site develop",
     "develop:extension": "yarn workspace extension develop",
     "svgo": "svgo icons/**/*.svg --config .svgo.json --pretty --indent 2"
