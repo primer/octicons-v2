@@ -5,6 +5,7 @@
     "extension"
   ],
   "scripts": {
+    "start": "yarn develop",
     "develop": "watch \"kill-port 8000 && concurrently --kill-others yarn:develop:*\" icons",
     "develop:site": "yarn workspace site develop",
     "develop:extension": "yarn workspace extension develop",
