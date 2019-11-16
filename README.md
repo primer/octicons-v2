@@ -25,7 +25,7 @@ yarn start
 # Navigate to http://localhost:8000 in your browser
 ```
 
-_Note: These steps require Yarn to be set up locally. See [yarnpkg.com](https://yarnpkg.com/) for more information._
+> Note: These steps require Yarn to be set up locally. See [yarnpkg.com](https://yarnpkg.com/) for more information.
 
 ### Loading the Chrome extension
 
@@ -36,9 +36,14 @@ Once you've started the local development server, follow these steps to load the
 1. Click "Load unpacked".
 1. Find and select the `extension` directory from this project.
 
-_Note: You'll only need to load the extension once._
+> Note: You'll only need to load the extension once.
 
 ### Adding an icon
+
+1. Start the development server:
+   ```shell
+   yarn start
+   ````
 
 1. Place an SVG file in the `icons/` directory.
 1. Optimize the SVG:
@@ -47,7 +52,7 @@ _Note: You'll only need to load the extension once._
    yarn svgo
    ```
 
-   _Tip: Open a new terminal session before running `yarn svgo` to avoid stopping the developement server._
+   > Tip: Open a new terminal session before running `yarn svgo` to avoid stopping the developement server.
 
 1. View your icon at http://localhost:8000.
-1. Reload the `Octicons Viewer` extension in Chrome to see the icon on github.com. You can reload the extension from `chrome://extensions` but we recommend using the [Extension Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) extension because it allows you to reload extensions from the toolbar.
+1. Reload the `Octicons Viewer` extension in Chrome to see the icon on [github.com](https://github.com). You can reload the extension from `chrome://extensions` but we recommend using the [Extension Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) extension because it allows you to reload unpacked extensions from the toolbar.
