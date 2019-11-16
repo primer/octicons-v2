@@ -1,5 +1,6 @@
 {
   "name": "Octicons Viewer",
+  "description": "Preview new Octicons on github.com",
   "version": "1.0",
   "manifest_version": 2,
   "permissions": ["activeTab"],
