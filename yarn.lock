@@ -967,6 +967,13 @@
     string-width "^2.0.0"
     strip-ansi "^3"
 
+"@primer/octicons@^9.2.0":
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-9.2.0.tgz#705783d57335c4ffbde4650e4d22302947208c6e"
+  integrity sha512-3vv7bBqVUHhU7ChpmQhmzz3WmHEKKSk9z/xEK5KnU8Egh96RoqKIim07geRj825ISa+IWj9cPdOA1ShqW5k3Yw==
+  dependencies:
+    object-assign "^4.1.1"
+
 "@reach/router@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.1.tgz#34ae3541a5ac44fa7796e5506a5d7274a162be4e"

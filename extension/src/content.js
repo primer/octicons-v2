@@ -1,12 +1,28 @@
 import { observe } from "selector-observer"
 import icons from "./icons"
+import oldOcticons from "@primer/octicons"
 
-console.log("Replacing Octicons...")
+// This enable/disable code seems very flakey and imperative.
+// TODO: Refactor enabled/disable code.
+
+let isEnabled = true
 
 observe(".octicon:not(.replaced)", {
   add(element) {
-    replaceOcticon(element)
+    if (isEnabled) {
+      replaceOcticon(element)
+    }
   },
+})
+
+chrome.runtime.onMessage.addListener(message => {
+  if (message.isEnabled) {
+    isEnabled = true
+    document.querySelectorAll(".octicon:not(.replaced)").forEach(replaceOcticon)
+  } else {
+    isEnabled = false
+    document.querySelectorAll(".octicon.replaced").forEach(restoreOcticon)
+  }
 })
 
 function replaceOcticon(octicon) {
@@ -25,6 +41,18 @@ function replaceOcticon(octicon) {
   octicon.setAttribute("width", height)
   octicon.classList.add("replaced")
   octicon.innerHTML = icon[viewBoxSize]
+}
+
+function restoreOcticon(octicon) {
+  const iconName = getIconName(octicon)
+  const icon = oldOcticons[iconName]
+  const height = parseInt(octicon.getAttribute("height"), 10)
+  const width = (parseInt(icon.width, 10) / parseInt(icon.height, 10)) * height
+
+  octicon.setAttribute("viewBox", icon.options.viewBox)
+  octicon.setAttribute("width", width)
+  octicon.classList.remove("replaced")
+  octicon.innerHTML = icon.path
 }
 
 function getIconName(octicon) {

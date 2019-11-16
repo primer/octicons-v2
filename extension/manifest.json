@@ -3,10 +3,16 @@
   "description": "Preview new Octicons on github.com",
   "version": "1.0",
   "manifest_version": 2,
-  "permissions": ["activeTab", "tabs", "*://*.github.com/*"],
+  "permissions": ["activeTab", "tabs"],
   "background": {
     "scripts": ["src/background.js"]
   },
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*"],
+      "js": ["build/content.js"]
+    }
+  ],
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",
