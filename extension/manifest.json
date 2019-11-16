@@ -4,6 +4,13 @@
   "version": "1.0",
   "manifest_version": 2,
   "permissions": ["activeTab", "tabs"],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+O"
+      }
+    }
+  },
   "background": {
     "scripts": ["src/background.js"]
   },
