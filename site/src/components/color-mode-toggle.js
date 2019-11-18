@@ -1,24 +1,31 @@
 /** @jsx jsx */
+import Moon from "react-feather/dist/icons/moon"
+import Sun from "react-feather/dist/icons/sun"
 import { jsx, useColorMode } from "theme-ui"
 import Button from "./button"
 
-const modes = ["light", "dark"]
-
-export default function ColorModeToggle() {
-  const [mode, setMode] = useColorMode()
+export default function ColorModeToggle(props) {
+  const [colorMode, setColorMode] = useColorMode()
   return (
     <Button
+      aria-label={
+        colorMode === "default" ? "Activate dark mode" : "Activate light mode"
+      }
       onClick={() => {
-        const index = modes.indexOf(mode)
-        const next = modes[(index + 1) % modes.length]
-        setMode(next)
+        setColorMode(colorMode === "default" ? "dark" : "default")
       }}
       sx={{
-        px: 3,
-        py: 2,
+        padding: 1,
+        lineHeight: 0,
+        backgroundColor: "transparent",
       }}
+      {...props}
     >
-      {mode}
+      {colorMode === "default" ? (
+        <Moon fill="currentColor" />
+      ) : (
+        <Sun fill="currentColor" />
+      )}
     </Button>
   )
 }
