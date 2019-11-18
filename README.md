@@ -2,8 +2,8 @@
 
 Octicons Viewer is a website and Chrome extension for reviewing new Octicons as part of the [Octicons refresh](https://github.com/github/design-systems/issues/711).
 
-- Website: https://octicons-viewer.now.sh
-- Chrome extension: _Coming soon_
+- [Website →](https://octicons-viewer.now.sh)
+- [Chrome extension →](https://chrome.google.com/webstore/detail/emgbcekhgdlkgiggjjjgmgcgbckfljan)
 
 ## Contributing
 
