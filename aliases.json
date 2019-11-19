@@ -1,5 +1,7 @@
 {
   "bookmark": ["saved"],
+  "shield": ["shield-lock"],
+  "git-commit": ["history"],
   "bookmark-slash": ["unsaved"],
   "cpu": ["circuit-board"],
   "copy": ["clippy"],
