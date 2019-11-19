@@ -1,3 +1,7 @@
 {
-  "bookmark": ["saved"]
+  "bookmark": ["saved"],
+  "shield": ["shield-lock"],
+  "git-commit": ["history"],
+  "bell": ["unmute"],
+  "bell-slash": ["mute"]
 }
