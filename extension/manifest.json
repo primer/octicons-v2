@@ -1,12 +1,24 @@
 {
   "name": "Octicons Viewer",
-  "version": "1.0",
+  "description": "Preview new Octicons on github.com",
+  "version": "1.0.1",
+  "author": "Cole Bemis <colebemis@github.com>",
   "manifest_version": 2,
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "tabs"],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+O"
+      }
+    }
+  },
+  "background": {
+    "scripts": ["src/background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["*://*.github.com/*"],
-      "js": ["build/bundle.js"]
+      "js": ["build/content.js"]
     }
   ],
   "icons": {
@@ -19,6 +31,7 @@
     "default_icon": {
       "16": "images/icon16.png",
       "32": "images/icon32.png"
-    }
+    },
+    "default_title": "Toggle Octicons Viewer"
   }
 }

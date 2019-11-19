@@ -1,7 +1,13 @@
 {
   "bookmark": ["saved"],
+<<<<<<< HEAD
   "shield": ["shield-lock"],
   "git-commit": ["history"],
+=======
+  "bookmark-slash": ["unsaved"],
+  "cpu": ["circuit-board"],
+  "copy": ["clippy"],
+>>>>>>> 8815db14b7b49b958167efdb57655e3f5e39fc48
   "bell": ["unmute"],
   "bell-slash": ["mute"]
 }
