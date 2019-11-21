@@ -19,7 +19,7 @@
     {
       "matches": [
         "*://*.github.com/*",
-        "http://github.localhost/*"
+        "*://github.localhost/*"
       ],
       "js": ["build/content.js"]
     }
