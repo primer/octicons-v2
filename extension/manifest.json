@@ -1,7 +1,7 @@
 {
   "name": "Octicons Viewer",
   "description": "Preview new Octicons on github.com",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Cole Bemis <colebemis@github.com>",
   "manifest_version": 2,
   "permissions": ["activeTab", "tabs"],
@@ -17,10 +17,7 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.github.com/*",
-        "*://github.localhost/*"
-      ],
+      "matches": ["*://*.github.com/*", "*://github.localhost/*"],
       "js": ["build/content.js"]
     }
   ],
