@@ -4,7 +4,6 @@
   "git-commit": ["history"],
   "bookmark-slash": ["unsaved"],
   "cpu": ["circuit-board"],
-  "copy": ["clippy"],
   "bell": ["unmute"],
   "bell-slash": ["mute"]
 }
