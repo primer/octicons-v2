@@ -5,5 +5,7 @@
   "bookmark-slash": ["unsaved"],
   "cpu": ["circuit-board"],
   "bell": ["unmute"],
-  "bell-slash": ["mute"]
+  "bell-slash": ["mute"],
+  "heading": ["text-size"],
+  "cross-reference": ["bookmark"]
 }
