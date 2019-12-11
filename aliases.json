@@ -7,5 +7,6 @@
   "bell": ["unmute"],
   "bell-slash": ["mute"],
   "heading": ["text-size"],
-  "cross-reference": ["bookmark"]
+  "cross-reference": ["bookmark"],
+  "filter": ["settings"]
 }
