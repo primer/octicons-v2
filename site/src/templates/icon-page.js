@@ -2,6 +2,7 @@
 import blobStream from "blob-stream"
 import copy from "copy-to-clipboard"
 import download from "downloadjs"
+import { Link } from "gatsby"
 import PDFDocument from "pdfkit/js/pdfkit.standalone"
 import React from "react"
 import svgToPdf from "svg-to-pdfkit"
@@ -15,14 +16,14 @@ import Specimens16 from "../components/specimens-16"
 import Specimens24 from "../components/specimens-24"
 
 export default function IconPage({ pageContext }) {
-  const { name, width, height, viewBox, contents } = pageContext
-  const filename = `${name}-${width}`
-  const svg = getSvg({ viewBox, width, height, contents })
+  const { name, size, viewBox, contents, sizes } = pageContext
+  const filename = `${name}-${size}`
+  const svg = getSvg({ viewBox, size, contents })
   const [pdf, setPdf] = React.useState(null)
 
   React.useEffect(() => {
-    getPdf({ svg, width, height }).then(blob => setPdf(blob))
-  }, [svg, width, height])
+    getPdf({ svg, size }).then(blob => setPdf(blob))
+  }, [svg, size])
 
   const [copied, setCopied] = React.useState(false)
 
@@ -36,18 +37,39 @@ export default function IconPage({ pageContext }) {
 
   return (
     <Layout>
-      <Head title={`${name} (${width}×${height})`} />
+      <Head title={`${name} (${size}px)`} />
       <h1 sx={{ mt: 0, mb: 2, fontSize: 5, fontWeight: "bold" }}>{name}</h1>
-      <p sx={{ mt: 0, mb: 4 }}>
-        {width}×{height}
-      </p>
+      <div
+        sx={{ mt: 0, mb: 4, borderBottom: "1px solid", borderColor: "border" }}
+      >
+        {sizes.map(size => (
+          <Link
+            key={size}
+            to={`/${name}-${size}`}
+            activeClassName="active"
+            sx={{
+              display: "inline-block",
+              mr: 4,
+              py: 3,
+              mb: "-1px",
+              textDecoration: "none",
+              color: "inherit",
+              "&:hover": {
+                borderBottom: "3px solid",
+                borderColor: "border",
+              },
+              "&.active": {
+                borderBottom: "3px solid",
+                borderColor: "primary",
+              },
+            }}
+          >
+            {size}px
+          </Link>
+        ))}
+      </div>
       <IconViewer>
-        <Icon
-          width={width}
-          height={height}
-          viewBox={viewBox}
-          contents={contents}
-        />
+        <Icon size={size} viewBox={viewBox} contents={contents} />
       </IconViewer>
       <div
         sx={{
@@ -79,11 +101,11 @@ export default function IconPage({ pageContext }) {
       </div>
       <h2 sx={{ mt: 4, mb: 3, fontWeight: "bold", fontSize: 4 }}>Specimens</h2>
       <Specimens
-        size={width}
+        size={size}
         icon={props => (
           <Icon
-            width={width}
-            height={height}
+            width={size}
+            height={size}
             viewBox={viewBox}
             contents={contents}
             {...props}
@@ -105,13 +127,13 @@ function Specimens({ size, icon }) {
   }
 }
 
-function getSvg({ viewBox, width, height, contents }) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="${width}" height="${height}">${contents}</svg>`
+function getSvg({ viewBox, size, contents }) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="${size}" height="${size}">${contents}</svg>`
 }
 
-function getPdf({ svg, width, height }) {
+function getPdf({ svg, size }) {
   return new Promise(resolve => {
-    const doc = new PDFDocument({ size: [width, height] })
+    const doc = new PDFDocument({ size: [size, size] })
     const stream = doc.pipe(blobStream())
     svgToPdf(doc, svg, 0, 0, { assumePt: true })
     doc.end()

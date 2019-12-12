@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-export default function Icon({ width, height, viewBox, contents, ...props }) {
+export default function Icon({ size, viewBox, contents, ...props }) {
   return (
     <svg
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox={viewBox}
       fill="currentColor"
       dangerouslySetInnerHTML={{ __html: contents }}
