@@ -10,6 +10,7 @@ export default {
     muted: colors.gray[2],
     warningText: colors.gray[8],
     warningBg: colors.yellow[4],
+    accent: colors.orange[6],
     modes: {
       dark: {
         text: colors.gray[1],
@@ -18,6 +19,7 @@ export default {
         muted: colors.gray[8],
         warningText: colors.black,
         warningBg: colors.yellow[6],
+        accent: colors.orange[6],
       },
     },
   },

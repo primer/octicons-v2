@@ -34,7 +34,7 @@ export default function IconViewer({ children }) {
         sx={theme => ({
           display: "flex",
           transform: `scale(${zoom})`,
-          boxShadow: `0 0 0 ${1 / zoom}px red`,
+          boxShadow: `0 0 0 ${1 / zoom}px ${theme.colors.accent}`,
         })}
       >
         {children}
