@@ -60,7 +60,7 @@ export default function IconPage({ pageContext }) {
               },
               "&.active": {
                 borderBottom: "3px solid",
-                borderColor: "primary",
+                borderColor: "text",
               },
             }}
           >
