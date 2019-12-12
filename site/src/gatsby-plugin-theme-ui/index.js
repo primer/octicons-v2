@@ -1,6 +1,7 @@
 import colors from "primer-colors"
 
 export default {
+  useCustomProperties: false,
   useColorSchemeMediaQuery: true,
   colors: {
     text: colors.gray[8],

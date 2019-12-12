@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { rgba } from "polished"
 import React from "react"
 import { jsx, useThemeUI } from "theme-ui"
 
@@ -21,7 +22,8 @@ export default function IconViewer({ children }) {
         backgroundImage: `${gridGradient(
           0,
           getGridSize(zoom),
-          theme.colors.border
+          theme.colors.border,
+          theme
         )}, ${gridGradient(90, getGridSize(zoom), theme.colors.border)}`,
         backgroundSize: `${getGridSize(zoom)}px ${getGridSize(zoom)}px`,
         backgroundPosition: "center center",
@@ -64,9 +66,12 @@ export default function IconViewer({ children }) {
 }
 
 function gridGradient(angle, size, color) {
-  return `linear-gradient(${angle}deg, transparent, transparent ${Math.floor(
+  // WebKit browsers do not support the "transparent" keyword in gradients.
+  // As a workaround, we convert `color` to rgba with an alpha value of 0.
+  const tranparent = rgba(color, 0)
+  return `linear-gradient(${angle}deg, ${tranparent}, ${tranparent} ${Math.floor(
     size / 2
-  )}px, ${color}, transparent ${Math.floor(size / 2) + 1}px)`
+  )}px, ${color}, ${tranparent} ${Math.floor(size / 2) + 1}px)`
 }
 
 function getGridSize(zoom) {
