@@ -30,7 +30,7 @@ export default {
     bold: 600,
     body: 400,
   },
-  radii: [0, 3, 6],
+  radii: [0, 5],
   forms: {
     slider: {
       bg: "border",
