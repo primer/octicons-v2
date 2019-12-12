@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Input } from "@theme-ui/components"
 import Tooltip from "@tippy.js/react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import groupBy from "lodash.groupby"
@@ -37,22 +38,12 @@ export default function App() {
           gridGap: 5,
         }}
       >
-        <input
-          sx={{
-            width: "100%",
-            p: 3,
-            appearance: "none",
-            border: "1px solid",
-            borderColor: "border",
-            borderRadius: 1,
-            fontSize: "inherit",
-            backgroundColor: "muted",
-            color: "inherit",
-          }}
+        <Input
           value={query}
           onChange={event => setQuery(event.target.value)}
           type="search"
           placeholder="Search icons..."
+          sx={{ p: 3, bg: "muted", borderColor: "border" }}
         />
         {Object.entries(iconsBySize).length > 0 ? (
           Object.entries(iconsBySize).map(([size, icons]) => (
