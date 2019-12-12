@@ -18,6 +18,7 @@ export default function ColorModeToggle(props) {
         padding: 1,
         lineHeight: 0,
         backgroundColor: "transparent",
+        boxShadow: "none",
       }}
       {...props}
     >

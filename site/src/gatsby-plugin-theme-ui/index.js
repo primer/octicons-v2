@@ -6,8 +6,8 @@ export default {
   colors: {
     text: colors.gray[8],
     background: colors.white,
-    border: colors.gray[3],
-    muted: colors.gray[2],
+    border: colors.gray[2],
+    muted: colors.gray[1],
     warningText: colors.gray[8],
     warningBg: colors.yellow[4],
     accent: colors.orange[6],
@@ -15,8 +15,8 @@ export default {
       dark: {
         text: colors.gray[1],
         background: colors.black,
-        border: colors.gray[6],
-        muted: colors.gray[8],
+        border: colors.gray[7],
+        muted: colors.gray[9],
         warningText: colors.black,
         warningBg: colors.yellow[6],
         accent: colors.orange[6],
