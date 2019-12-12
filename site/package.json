@@ -12,6 +12,7 @@
     "@emotion/core": "^10.0.17",
     "@mdx-js/react": "^1.4.5",
     "@sindresorhus/slugify": "^0.9.1",
+    "@theme-ui/components": "^0.2.50",
     "@tippy.js/react": "^2.2.3",
     "blob-stream": "^0.1.3",
     "cheerio": "^1.0.0-rc.3",

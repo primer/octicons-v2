@@ -29,4 +29,9 @@ export default {
     body: 400,
   },
   radii: [0, 3, 6],
+  forms: {
+    slider: {
+      bg: "border",
+    },
+  },
 }

@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Slider } from "@theme-ui/components"
 import { rgba } from "polished"
 import React from "react"
 import { jsx, useThemeUI } from "theme-ui"
@@ -40,7 +41,11 @@ export default function IconViewer({ children }) {
       </div>
       <div
         sx={{
-          display: "flex",
+          display: "grid",
+          gridGap: 2,
+          gridTemplateColumns: "1fr 48px",
+          justifyItems: "start",
+          alignItems: "center",
           position: "absolute",
           left: 0,
           bottom: 0,
@@ -48,16 +53,15 @@ export default function IconViewer({ children }) {
           p: 3,
         }}
       >
-        <input
+        <Slider
           aria-label="zoom"
           name="zoom"
-          type="range"
           min="1"
           max="24"
           step="0.5"
           value={zoom}
           onChange={event => setZoom(parseFloat(event.target.value))}
-          sx={{ flexGrow: 1, p: 0, m: 0, mr: 2 }}
+          sx={{ width: "100%", p: 0, m: 0, mr: 2 }}
         />
         <span sx={{ flexShrink: 0 }}>{zoom * 100}%</span>
       </div>
