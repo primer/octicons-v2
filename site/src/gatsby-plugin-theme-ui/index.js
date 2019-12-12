@@ -11,6 +11,7 @@ export default {
     warningText: colors.gray[8],
     warningBg: colors.yellow[4],
     accent: colors.orange[6],
+    gray: colors.gray[3],
     modes: {
       dark: {
         text: colors.gray[1],
@@ -20,6 +21,7 @@ export default {
         warningText: colors.black,
         warningBg: colors.yellow[6],
         accent: colors.orange[6],
+        gray: colors.gray[6],
       },
     },
   },
@@ -31,9 +33,4 @@ export default {
     body: 400,
   },
   radii: [0, 5],
-  forms: {
-    slider: {
-      bg: "border",
-    },
-  },
 }

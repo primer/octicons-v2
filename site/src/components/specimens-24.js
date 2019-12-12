@@ -26,7 +26,7 @@ export default function Specimens24({ icon: Icon }) {
           width: 56,
           height: 56,
           color: "text",
-          bg: "muted",
+          bg: "gray",
           borderRadius: "50%",
         }}
       >
