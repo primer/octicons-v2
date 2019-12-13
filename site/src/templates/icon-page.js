@@ -42,7 +42,7 @@ export default function IconPage({ pageContext }) {
       <div
         sx={{ mt: 0, mb: 4, borderBottom: "1px solid", borderColor: "border" }}
       >
-        {sizes.map(size => (
+        {sizes.sort().map(size => (
           <Link
             key={size}
             to={`/${name}-${size}`}
