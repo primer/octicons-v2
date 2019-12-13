@@ -27,11 +27,12 @@ export default function App() {
   const [query, setQuery] = React.useState("")
   const results = useSearch(data.allIcon.nodes, query, { keys: ["name"] })
 
-  const iconsBySize = groupBy(results, "size")
+  const iconsBySize = React.useMemo(() => groupBy(results, "size"), [results])
 
   return (
     <Layout>
       <Head />
+
       <div
         sx={{
           display: "grid",

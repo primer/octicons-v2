@@ -10,7 +10,7 @@ function useSearch(list, query, options) {
         threshold: 0.2,
         ...options,
       }),
-    [list, options]
+    [list]
   )
 
   React.useEffect(() => {
