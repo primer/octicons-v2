@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import Button from "./button"
 
 export default function Specimens16({ icon: Icon }) {
   return (
@@ -12,24 +13,15 @@ export default function Specimens16({ icon: Icon }) {
         <Icon sx={{ mr: 1 }} />
         <span contentEditable>Small inline text</span>
       </span>
-      <button
+      <Button
         sx={{
-          appearance: "none",
           px: 3,
           py: 2,
-          fontFamily: "inherit",
-          fontSize: 1,
-          fontWeight: "bold",
-          color: "text",
-          background: "transparent",
-          border: "1px solid",
-          borderColor: "border",
-          borderRadius: 1,
         }}
       >
         <Icon sx={{ mr: 1 }} />
         <span contentEditable>Button</span>
-      </button>
+      </Button>
       <span
         sx={{
           display: "inline-block",
