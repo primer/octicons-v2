@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Octicons Viewer",
+    title: "Octicons v2",
     description: "Your project. GitHub’s icons.",
   },
   plugins: [

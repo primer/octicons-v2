@@ -43,7 +43,7 @@ export default function Layout({ children }) {
             to="/"
             sx={{ fontWeight: "bold", "&:hover": { textDecoration: "none" } }}
           >
-            Octicons Viewer
+            Octicons v2
             <span
               sx={{
                 fontSize: 0,
