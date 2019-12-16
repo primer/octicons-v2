@@ -13,8 +13,8 @@ Follow these steps to get the website and Chrome extension running on your local
 
 ```shell
 # Clone the repository
-git clone https://github.com/primer/octicons-viewer.git
-cd octicons-viewer
+git clone https://github.com/primer/octicons-v2.git
+cd octicons-v2
 
 # Install the dependencies
 yarn
