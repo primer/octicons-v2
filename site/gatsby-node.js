@@ -7,6 +7,7 @@ const Zip = require("node-zip")
 const PDFDocument = require("pdfkit")
 const svgToPdf = require("svg-to-pdfkit")
 const groupBy = require("lodash.groupby")
+const puppeteer = require("puppeteer")
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const filepaths = glob.sync("../icons/**/*.svg")
@@ -58,6 +59,8 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
+  generateOgImages(result.data.allIcon.nodes)
+
   const iconsByName = groupBy(result.data.allIcon.nodes, "name")
 
   Object.values(iconsByName).forEach(icons => {
@@ -67,6 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
         path: icon.slug,
         component: iconPageTemplate,
         context: {
+          slug: icon.slug,
           name: icon.name,
           size: icon.size,
           viewBox: icon.viewBox,
@@ -150,4 +154,27 @@ function getPdf({ svg, size }) {
     svgToPdf(doc, svg, 0, 0, { assumePt: true })
     doc.end()
   })
+}
+
+async function generateOgImages(icons) {
+  const browser = await puppeteer.launch({
+    defaultViewport: { width: 1200, height: 675 },
+  })
+  const page = await browser.newPage()
+
+  for (const icon of icons) {
+    const html = `<div style="height:100vh;width: 100vw;display:flex;justify-content:center;align-items:center;">
+  ${getSvg({
+    viewBox: icon.viewBox,
+    size: icon.size * 20,
+    contents: icon.contents,
+  })}
+</div>`
+    await page.setContent(html)
+    await page.screenshot({
+      path: path.resolve(__dirname, `public/${icon.slug}.png`),
+    })
+  }
+
+  await browser.close()
 }

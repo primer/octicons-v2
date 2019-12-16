@@ -16,8 +16,7 @@ import Specimens16 from "../components/specimens-16"
 import Specimens24 from "../components/specimens-24"
 
 export default function IconPage({ pageContext }) {
-  const { name, size, viewBox, contents, sizes } = pageContext
-  const filename = `${name}-${size}`
+  const { slug, name, size, viewBox, contents, sizes } = pageContext
   const svg = getSvg({ viewBox, size, contents })
   const [pdf, setPdf] = React.useState(null)
 
@@ -37,7 +36,10 @@ export default function IconPage({ pageContext }) {
 
   return (
     <Layout>
-      <Head title={`${name} (${size}px)`} />
+      <Head
+        title={`${name} (${size}px)`}
+        imageUrl={`https://octicons-v2.now.sh/${slug}.png`}
+      />
       <h1 sx={{ mt: 0, mb: 2, fontSize: 5, fontWeight: "bold" }}>{name}</h1>
       <div
         sx={{ mt: 0, mb: 4, borderBottom: "1px solid", borderColor: "border" }}
@@ -87,14 +89,12 @@ export default function IconPage({ pageContext }) {
         >
           {copied ? "Copied" : "Copy SVG"}
         </Button>
-        <Button
-          onClick={() => download(svg, `${filename}.svg`, "image/svg+xml")}
-        >
+        <Button onClick={() => download(svg, `${slug}.svg`, "image/svg+xml")}>
           Download SVG
         </Button>
         <Button
           disabled={!pdf}
-          onClick={() => download(pdf, `${filename}.pdf`, "application/pdf")}
+          onClick={() => download(pdf, `${slug}.pdf`, "application/pdf")}
         >
           Download PDF
         </Button>
