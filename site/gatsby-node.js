@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  generateOgImages(result.data.allIcon.nodes)
+  // generateOgImages(result.data.allIcon.nodes)
 
   const iconsByName = groupBy(result.data.allIcon.nodes, "name")
 
