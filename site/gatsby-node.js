@@ -8,6 +8,7 @@ const PDFDocument = require("pdfkit")
 const svgToPdf = require("svg-to-pdfkit")
 const groupBy = require("lodash.groupby")
 const puppeteer = require("puppeteer")
+const chrome = require("chrome-aws-lambda")
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const filepaths = glob.sync("../icons/**/*.svg")
@@ -159,6 +160,9 @@ function getPdf({ svg, size }) {
 async function generateOgImages(icons) {
   const browser = await puppeteer.launch({
     defaultViewport: { width: 1200, height: 675 },
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
   })
   const page = await browser.newPage()
 
