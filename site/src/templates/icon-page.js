@@ -36,10 +36,7 @@ export default function IconPage({ pageContext }) {
 
   return (
     <Layout>
-      <Head
-        title={`${name} (${size}px)`}
-        imageUrl={`https://octicons-v2.now.sh/${slug}.png`}
-      />
+      <Head title={`${name} (${size}px)`} />
       <h1 sx={{ mt: 0, mb: 2, fontSize: 5, fontWeight: "bold" }}>{name}</h1>
       <div
         sx={{ mt: 0, mb: 4, borderBottom: "1px solid", borderColor: "border" }}
