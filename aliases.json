@@ -8,5 +8,6 @@
   "bell-slash": ["mute"],
   "heading": ["text-size"],
   "cross-reference": ["bookmark"],
-  "filter": ["settings"]
+  "filter": ["settings"],
+  "arrow-right": ["file-symlink-file"]
 }
