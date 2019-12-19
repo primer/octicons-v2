@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "site",
-    "extension"
+    "extension",
+    "og-image"
   ],
   "scripts": {
     "start": "yarn develop",

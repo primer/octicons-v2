@@ -4,6 +4,7 @@ import copy from "copy-to-clipboard"
 import download from "downloadjs"
 import { Link } from "gatsby"
 import PDFDocument from "pdfkit/js/pdfkit.standalone"
+import qs from "qs"
 import React from "react"
 import svgToPdf from "svg-to-pdfkit"
 import { jsx } from "theme-ui"
@@ -36,7 +37,12 @@ export default function IconPage({ pageContext }) {
 
   return (
     <Layout>
-      <Head title={`${name} (${size}px)`} />
+      <Head
+        title={`${name} (${size}px)`}
+        imageUrl={`https://octicons-v2.now.sh/api/og-image?${qs.stringify({
+          svg,
+        })}`}
+      />
       <h1 sx={{ mt: 0, mb: 2, fontSize: 5, fontWeight: "bold" }}>{name}</h1>
       <div
         sx={{ mt: 0, mb: 4, borderBottom: "1px solid", borderColor: "border" }}
