@@ -6,7 +6,7 @@ Inspired by https://github.com/zeit/og-image
 
 ## Problem
 
-We often share https://octicons-v2.now.sh links on Slack to get feedback on icons. However, we have to leave Slack to view the icons. This makes it hard to get quick feedback.
+We often share https://octicons-v2.now.sh links on Slack to get feedback on icons. However, we have to leave Slack to view the icons. This makes it hard to give quick feedback.
 
 ## Solution
 
