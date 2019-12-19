@@ -11,7 +11,7 @@
     { "src": "og-image/index.ts", "use": "@now/node" }
   ],
   "routes": [
-    { "src": "/api/og-image/(.*)", "dest": "/og-image/index.ts" },
+    { "src": "/api/og-image", "dest": "/og-image/index.ts" },
     { "src": "/(.*)", "dest": "/site/$1" }
   ]
 }
