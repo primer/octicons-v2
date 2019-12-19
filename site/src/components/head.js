@@ -9,6 +9,7 @@ export default function Head(props) {
     ? `${props.title} | ${siteMetadata.title}`
     : siteMetadata.title
   const description = props.description || siteMetadata.description
+  const imageUrl = props.imageUrl || siteMetadata.imageUrl
 
   return (
     <Helmet>
@@ -16,6 +17,8 @@ export default function Head(props) {
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="twitter:card" content="summary_large_image" />
     </Helmet>
   )
 }
