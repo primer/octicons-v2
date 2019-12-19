@@ -7,7 +7,11 @@
       "src": "site/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "public" }
-    }
+    },
+    { "src": "og-image/index.ts", "use": "@now/node" }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/site/$1" }]
+  "routes": [
+    { "src": "/api/og-image/(.*)", "dest": "/og-image/index.ts" },
+    { "src": "/(.*)", "dest": "/site/$1" }
+  ]
 }
