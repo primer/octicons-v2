@@ -39,7 +39,7 @@ export default function IconPage({ pageContext }) {
     <Layout>
       <Head
         title={`${name} (${size}px)`}
-        imageUrl={`https://octicons-og-image.now.sh/api?${qs.stringify({
+        imageUrl={`https://octicons-v2.now.sh/api/og-image?${qs.stringify({
           svg,
         })}`}
       />
