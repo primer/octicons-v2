@@ -1,8 +1,6 @@
 import { NowRequest, NowResponse } from "@now/node"
 import chrome from "chrome-aws-lambda"
-import puppeteer from "puppeteer-core"
-
-// TODO: set up dev environment
+import puppeteer, { LaunchOptions } from "puppeteer-core"
 
 export default async (req: NowRequest, res: NowResponse) => {
   if (typeof req.query.svg !== "string") {
@@ -50,15 +48,41 @@ function getHtml(svg: string) {
 }
 
 async function getScreenshot(html: string) {
-  const browser = await puppeteer.launch({
-    args: chrome.args,
-    executablePath: await chrome.executablePath,
-    headless: chrome.headless,
-    defaultViewport: { width: 1200, height: 630 },
-  })
+  const launchOptions = await getLaunchOptions()
+  const browser = await puppeteer.launch(launchOptions)
   const page = await browser.newPage()
   await page.setContent(html)
   const file = await page.screenshot()
   await browser.close()
   return file
+}
+
+// Copied from https://github.com/zeit/og-image/blob/master/api/_lib/options.ts
+const isDev = process.env.NOW_REGION === "dev1"
+const exePath =
+  process.platform === "win32"
+    ? "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+    : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+async function getLaunchOptions(): Promise<LaunchOptions> {
+  // Facebook recommends 1200x630 for Open Graph images
+  // Reference: https://developers.facebook.com/docs/sharing/webmasters/images/
+  const width = 1200
+  const height = 630
+
+  if (isDev) {
+    return {
+      args: [],
+      executablePath: exePath,
+      headless: true,
+      defaultViewport: { width, height },
+    }
+  }
+
+  return {
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
+    defaultViewport: { width, height },
+  }
 }
