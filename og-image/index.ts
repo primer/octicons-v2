@@ -6,20 +6,26 @@ import puppeteer from "puppeteer-core"
 
 export default async (req: NowRequest, res: NowResponse) => {
   if (typeof req.query.svg !== "string") {
-    // TODO: return error
+    res.statusCode = 400
+    res.json({ message: "Missing `svg` query parameter" })
     return
   }
 
-  const html = getHtml(req.query.svg)
-  const file = await getScreenshot(html) // TODO: handle error
+  try {
+    const html = getHtml(req.query.svg)
+    const file = await getScreenshot(html)
 
-  res.statusCode = 200
-  res.setHeader("Content-Type", "image/png")
-  res.setHeader(
-    "Cache-Control",
-    `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`
-  )
-  res.end(file)
+    res.statusCode = 200
+    res.setHeader("Content-Type", "image/png")
+    res.setHeader(
+      "Cache-Control",
+      `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`
+    )
+    res.end(file)
+  } catch (error) {
+    res.statusCode = 500
+    res.json(JSON.stringify(error))
+  }
 }
 
 function getHtml(svg: string) {
