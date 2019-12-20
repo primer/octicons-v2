@@ -1,6 +1,5 @@
 {
   "bookmark": ["saved"],
-  "shield": ["shield-lock"],
   "git-commit": ["history", "repo-push"],
   "bookmark-slash": ["unsaved"],
   "cpu": ["circuit-board"],
