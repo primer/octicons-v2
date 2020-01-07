@@ -41,5 +41,5 @@
     "theme-ui": "^0.2.49",
     "trim-newlines": "^3.0.0"
   },
-  "engines": { "node": "12.x" }
+  "engines": { "node": "10.x" }
 }

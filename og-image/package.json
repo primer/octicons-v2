@@ -7,5 +7,5 @@
     "chrome-aws-lambda": "^2.0.1",
     "puppeteer-core": "^2.0.0"
   },
-  "engines": { "node": "12.x" }
+  "engines": { "node": "10.x" }
 }

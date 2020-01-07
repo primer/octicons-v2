@@ -20,5 +20,6 @@
     "trim-newlines": "^3.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "engines": { "node": "10.x" }
 }
