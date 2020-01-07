@@ -40,5 +40,6 @@
     "svg-to-pdfkit": "^0.1.7",
     "theme-ui": "^0.2.49",
     "trim-newlines": "^3.0.0"
-  }
+  },
+  "engines": { "node": "12.x" }
 }
