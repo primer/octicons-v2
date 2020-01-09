@@ -8,5 +8,6 @@
   "heading": ["text-size"],
   "cross-reference": ["bookmark"],
   "filter": ["settings"],
-  "arrow-right": ["file-symlink-file"]
+  "arrow-right": ["file-symlink-file"],
+  "download": ["cloud-download"]
 }
