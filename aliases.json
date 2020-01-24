@@ -9,5 +9,6 @@
   "cross-reference": ["bookmark"],
   "filter": ["settings"],
   "arrow-right": ["file-symlink-file"],
-  "download": ["cloud-download"]
+  "download": ["cloud-download"],
+  "file": ["diff"]
 }
