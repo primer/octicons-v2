@@ -10,5 +10,6 @@
   "filter": ["settings"],
   "arrow-right": ["file-symlink-file"],
   "download": ["cloud-download"],
-  "file": ["diff"]
+  "file": ["diff"],
+  "code-square": ["gist"]
 }
