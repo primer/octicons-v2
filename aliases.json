@@ -10,6 +10,9 @@
   "filter": ["settings"],
   "arrow-right": ["file-symlink-file"],
   "download": ["cloud-download"],
-  "file": ["diff"],
-  "code-square": ["gist"]
+  "code-square": ["gist"],
+  "device-desktop": ["desktop-download"],
+  "mail": ["mail-read"],
+  "diff": ["request-changes"],
+  "file-diff": ["diff"]
 }
