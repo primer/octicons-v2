@@ -14,5 +14,6 @@
   "device-desktop": ["desktop-download"],
   "mail": ["mail-read"],
   "diff": ["request-changes"],
-  "file-diff": ["diff"]
+  "file-diff": ["diff"],
+  "lock": ["gist-secret"]
 }
