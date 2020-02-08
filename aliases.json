@@ -14,5 +14,6 @@
   "mail": ["mail-read"],
   "diff": ["request-changes"],
   "file-diff": ["diff"],
-  "lock": ["gist-secret"]
+  "lock": ["gist-secret"],
+  "image": ["file-media"]
 }
