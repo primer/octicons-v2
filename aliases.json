@@ -15,5 +15,6 @@
   "diff": ["request-changes"],
   "file-diff": ["diff"],
   "lock": ["gist-secret"],
-  "image": ["file-media"]
+  "image": ["file-media"],
+  "repo-push": ["repo-force-push"]
 }
