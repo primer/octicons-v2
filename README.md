@@ -13,5 +13,5 @@ Preview the new Octicons on the updated Octicons Viewer website or see them live
 
 ## Contributing
 
-**Request or add a new icon:** To contribute a new icon please create a new issue to submit your proposal.
-**Chrome extension:** To contribute to the the Chrome extension, please refer to the [Chrome extension README](chrome-extension-readme.md).
+- **Request or add a new icon:** To contribute a new icon please create a new issue to submit your proposal.
+- **Chrome extension:** To contribute to the the Chrome extension, please refer to the [Chrome extension README](chrome-extension-readme.md).
