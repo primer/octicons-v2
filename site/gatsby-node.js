@@ -79,7 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-exports.onPostBuild = async ({ graphql }) => {
+exports.onPreBuild = async ({ graphql }) => {
   const result = await graphql(`
     {
       allIcon {
