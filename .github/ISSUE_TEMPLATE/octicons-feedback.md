@@ -8,16 +8,16 @@ assignees: ashygee, colebemis, edokoa
 ---
 
 **Which icon?**
-Please tell us which icon you're leaving feedback for.
+Tell us which icon you're leaving feedback for.
 
 **Where is it located?**
-Please provide a link to where in the UI the icon referenced is being used.
+Provide a link to where in the UI the icon referenced is being used.
 
 **Feedback**
-A clear and concise description of what needs to be improved/iterated upon.
+Provide a clear and concise description of what needs to be improved/iterated upon.
 
 **Screenshots**
-Please add screenshots to help explain your feedback.
+Add screenshots to help explain your feedback.
 
 **Figma link (optional)**
 If you made changes in Figma, please provide a link so that we can review.
