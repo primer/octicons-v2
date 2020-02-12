@@ -20,4 +20,4 @@ A clear and concise description of what needs to be improved/iterated upon.
 Please add screenshots to help explain your feedback.
 
 **Figma link (optional)**
-If you have made changes in Figma, please provide a link so that we can review.
+If you made changes in Figma, please provide a link so that we can review.
