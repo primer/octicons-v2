@@ -1,59 +1,17 @@
 # Octicons v2
 
-A website and Chrome extension for reviewing new Octicons as part of the [Octicons refresh](https://github.com/github/design-systems/issues/711)
+![image](https://user-images.githubusercontent.com/10384315/74374025-77481c80-4d92-11ea-9c32-ebe55aa33cd6.png)
+
+A new look for Octicons, GitHub's icon set. To learn more about this project refer to the [Octicons refresh](https://github.com/github/design-systems/issues/711) issue in [github/design-systems](https://github.com/github/design-systems/).
+
+## How to view
+
+Preview the new Octicons on the updated Octicons Viewer website or see them live on GitHub.com using the custom Chrome extension!
 
 - 👉 [Website](https://octicons-v2.now.sh)
 - 👉 [Chrome extension](https://chrome.google.com/webstore/detail/emgbcekhgdlkgiggjjjgmgcgbckfljan)
 
 ## Contributing
 
-### Local development
-
-Follow these steps to get the website and Chrome extension running on your local machine:
-
-```shell
-# Clone the repository
-git clone https://github.com/primer/octicons-v2.git
-cd octicons-v2
-
-# Install the dependencies
-yarn
-
-# Start the development server
-yarn start
-
-# Navigate to http://localhost:8000 in your browser
-```
-
-> Note: These steps require Yarn to be set up locally. See [yarnpkg.com](https://yarnpkg.com/) for more information.
-
-### Loading the Chrome extension
-
-Once you've started the local development server, follow these steps to load the extension into Chrome:
-
-1. Open Chrome and navigate to `chrome://extensions`.
-1. Enable `Developer mode` using the toggle in the top right.
-1. Click "Load unpacked".
-1. Find and select the `extension` directory from this project.
-
-> Note: You'll only need to load the extension once.
-
-### Adding an icon
-
-1. Start the development server:
-
-   ```shell
-   yarn start
-   ```
-
-1. Place an SVG file in the `icons/` directory.
-1. Optimize the SVG:
-
-   ```shell
-   yarn svgo
-   ```
-
-   > Tip: Open a new terminal session before running `yarn svgo` to avoid stopping the developement server.
-
-1. View your icon at http://localhost:8000.
-1. Reload the `Octicons v2` extension in Chrome to see the icon on [github.com](https://github.com). You can reload the extension from `chrome://extensions` but we recommend using the [Extension Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) extension because it allows you to reload unpacked extensions from the toolbar.
+**Request or add a new icon:** To contribute a new icon please create a new issue to submit your proposal.
+**Chrome extension:** To contribute to the the Chrome extension, please refer to the [Chrome extension README](chrome-extension-readme.md).
