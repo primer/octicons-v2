@@ -12,6 +12,11 @@
   ],
   "routes": [
     { "src": "/api/og-image", "dest": "/og-image/index.ts" },
-    { "src": "/(.*)", "dest": "/site/$1" }
+    { "src": "/octicons-v2(/.*)?", "dest": "/site$1" },
+    {
+      "src": "/(.*)",
+      "status": 301,
+      "headers": { "Location": "/octicons-v2/$1" }
+    }
   ]
 }
