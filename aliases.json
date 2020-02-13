@@ -17,5 +17,6 @@
   "lock": ["gist-secret"],
   "image": ["file-media"],
   "repo-push": ["repo-force-push"],
-  "people": ["jersey"]
+  "people": ["jersey"],
+  "broadcast": ["radio-tower"]
 }
