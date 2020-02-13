@@ -1,59 +1,34 @@
 # Octicons v2
 
-A website and Chrome extension for reviewing new Octicons as part of the [Octicons refresh](https://github.com/github/design-systems/issues/711)
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/4608155/74476584-77155300-4e5e-11ea-88c6-6c9f64cf0f05.png" alt="Octicons cover" />
+</p>
+
+A new look for Octicons, GitHub's icon set. To learn more about this project, refer to the [Octicons refresh](https://github.com/github/design-systems/issues/711) issue in [github/design-systems](https://github.com/github/design-systems/).
+
+## Preview
+
+Preview the new Octicons on the Octicons v2 website or see them live on GitHub.com using the custom Chrome extension!
 
 - 👉 [Website](https://octicons-v2.now.sh)
 - 👉 [Chrome extension](https://chrome.google.com/webstore/detail/emgbcekhgdlkgiggjjjgmgcgbckfljan)
 
 ## Contributing
 
-### Local development
+### 💬 Leave feedback
 
-Follow these steps to get the website and Chrome extension running on your local machine:
+To leave feedback, open an issue using the [Octicons feedback](https://github.com/primer/octicons-v2/issues/new?assignees=ashygee%2C+colebemis%2C+edokoa&labels=feedback&template=octicons-feedback.md&title=%5BFeedback%5D+) template.
 
-```shell
-# Clone the repository
-git clone https://github.com/primer/octicons-v2.git
-cd octicons-v2
+### 🙏 Request or add a new icon
 
-# Install the dependencies
-yarn
+To request or add a new icon, open an issue using the [New icon request](https://github.com/primer/octicons-v2/issues/new?assignees=&labels=icon+request&template=new-icon-request.md&title=%5BIcon+request%5D) template.
 
-# Start the development server
-yarn start
+### 👩‍💻 Improve the website or Chrome extension
 
-# Navigate to http://localhost:8000 in your browser
-```
+To contribute to the website or Chrome extension, see [CONTRIBUTING.md](chrome-extension-readme.md) for detailed instructions.
 
-> Note: These steps require Yarn to be set up locally. See [yarnpkg.com](https://yarnpkg.com/) for more information.
+## License
 
-### Loading the Chrome extension
+(c) GitHub, Inc.
 
-Once you've started the local development server, follow these steps to load the extension into Chrome:
-
-1. Open Chrome and navigate to `chrome://extensions`.
-1. Enable `Developer mode` using the toggle in the top right.
-1. Click "Load unpacked".
-1. Find and select the `extension` directory from this project.
-
-> Note: You'll only need to load the extension once.
-
-### Adding an icon
-
-1. Start the development server:
-
-   ```shell
-   yarn start
-   ```
-
-1. Place an SVG file in the `icons/` directory.
-1. Optimize the SVG:
-
-   ```shell
-   yarn svgo
-   ```
-
-   > Tip: Open a new terminal session before running `yarn svgo` to avoid stopping the developement server.
-
-1. View your icon at http://localhost:8000.
-1. Reload the `Octicons v2` extension in Chrome to see the icon on [github.com](https://github.com). You can reload the extension from `chrome://extensions` but we recommend using the [Extension Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) extension because it allows you to reload unpacked extensions from the toolbar.
+When using GitHub logos, be sure to follow the [GitHub logo guidelines](https://github.com/logos). The [MIT Licence](./LICENSE) applies to all other files.
