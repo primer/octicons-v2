@@ -21,7 +21,7 @@ To leave feedback, open an issue using the [Octicons feedback](https://github.co
 
 ### 🙏 Request or add a new icon
 
-To request or add a new icon, open an issue using the [New icon request](https://github.com/primer/octicons-v2/issues/new?assignees=&labels=icon+request&template=new-icon-request.md&title=%5BIcon+request%5D) template.
+To request or add a new icon, open an issue using the [new icon request](https://github.com/primer/octicons-v2/issues/new?assignees=&labels=icon+request&template=new-icon-request.md&title=%5BIcon+request%5D) template.
 
 ### 👩‍💻 Improve the website or Chrome extension
 
