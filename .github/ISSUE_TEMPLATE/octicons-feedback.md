@@ -1,6 +1,6 @@
 ---
 name: Octicons feedback
-about: Submit feedback to help up iterate & improve octicons
+about: Submit feedback to help us improve Octicons
 title: "[Feedback] "
 labels: feedback
 assignees: ashygee, colebemis, edokoa
