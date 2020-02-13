@@ -1,13 +1,6 @@
-# Octicons v2
+# Contributing
 
-A website and Chrome extension for reviewing new Octicons as part of the [Octicons refresh](https://github.com/github/design-systems/issues/711)
-
-- 👉 [Website](https://octicons-v2.now.sh)
-- 👉 [Chrome extension](https://chrome.google.com/webstore/detail/emgbcekhgdlkgiggjjjgmgcgbckfljan)
-
-## Contributing
-
-### Local development
+## Local development
 
 Follow these steps to get the website and Chrome extension running on your local machine:
 
@@ -27,7 +20,7 @@ yarn start
 
 > Note: These steps require Yarn to be set up locally. See [yarnpkg.com](https://yarnpkg.com/) for more information.
 
-### Loading the Chrome extension
+## Loading the Chrome extension
 
 Once you've started the local development server, follow these steps to load the extension into Chrome:
 
@@ -38,7 +31,7 @@ Once you've started the local development server, follow these steps to load the
 
 > Note: You'll only need to load the extension once.
 
-### Adding an icon
+## Adding an icon
 
 1. Start the development server:
 
