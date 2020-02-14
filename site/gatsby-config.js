@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Octicons v2",
-    description: "Your project. GitHub’s icons.",
+    description: "[WIP] A new look for Octicons, GitHub's icon set",
     imageUrl:
       "https://user-images.githubusercontent.com/10384315/53922681-2f6d3100-402a-11e9-9719-5d1811c8110a.png",
   },
