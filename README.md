@@ -10,7 +10,7 @@ A new look for Octicons, GitHub's icon set. To learn more about this project, re
 
 Preview the new Octicons on the Octicons v2 website or see them live on GitHub.com using the custom Chrome extension!
 
-- 👉 [Website](https://octicons-v2.now.sh)
+- 👉 [Website](https://primer.style/octicons-v2)
 - 👉 [Chrome extension](https://chrome.google.com/webstore/detail/emgbcekhgdlkgiggjjjgmgcgbckfljan)
 
 ## Contributing
@@ -25,7 +25,7 @@ To request or add a new icon, open an issue using the [new icon request](https:/
 
 ### 👩‍💻 Improve the website or Chrome extension
 
-To contribute to the website or Chrome extension, see [CONTRIBUTING.md](chrome-extension-readme.md) for detailed instructions.
+To contribute to the website or Chrome extension, see [CONTRIBUTING.md](https://github.com/primer/octicons-v2/blob/master/CONTRIBUTING.md) for detailed instructions.
 
 ## License
 
