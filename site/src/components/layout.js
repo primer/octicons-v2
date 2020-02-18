@@ -59,6 +59,14 @@ export default function Layout({ children }) {
             </span>
           </Link>
           <div sx={{ mt: [3, 0] }}>
+            <Link
+              href="https://github.com/primer/octicons-v2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ mr: [3, 4] }}
+            >
+              View repo
+            </Link>
             <Link href="/octicons.zip" download sx={{ mr: [3, 4] }}>
               Download all
             </Link>
