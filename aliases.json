@@ -1,6 +1,5 @@
 {
   "bookmark": ["saved"],
-  "git-commit": ["history", "repo-push"],
   "bookmark-slash": ["unsaved"],
   "cpu": ["circuit-board"],
   "bell": ["unmute"],
@@ -17,6 +16,7 @@
   "lock": ["gist-secret"],
   "image": ["file-media"],
   "repo-push": ["repo-force-push"],
+  "git-commit": ["history", "repo-push"],
   "people": ["jersey"],
   "broadcast": ["radio-tower"]
 }
