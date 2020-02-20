@@ -5,11 +5,13 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import groupBy from "lodash.groupby"
 import React from "react"
 import { jsx } from "theme-ui"
+import createPersistedState from "use-persisted-state"
 import Head from "../components/head"
 import Icon from "../components/icon"
 import Layout from "../components/layout"
-import useLocalStorage from "../use-local-storage"
 import useSearch from "../use-search"
+
+const useIsShowingIconNamesState = createPersistedState(' "isShowingIconNames"')
 
 export default function App() {
   const data = useStaticQuery(graphql`
@@ -26,10 +28,10 @@ export default function App() {
     }
   `)
   const [query, setQuery] = React.useState("")
-  const [isShowingIconNames, setIsShowingIconNames] = useLocalStorage(
-    "isShowingIconNames",
-    false
-  )
+  const [
+    isShowingIconNames,
+    setIsShowingIconNames,
+  ] = useIsShowingIconNamesState(false)
   const results = useSearch(data.allIcon.nodes, query, { keys: ["name"] })
 
   const iconsBySize = React.useMemo(() => groupBy(results, "size"), [results])
