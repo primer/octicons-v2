@@ -81,7 +81,7 @@ export default function Layout({ children }) {
         </div>
         <ColorModeToggle sx={{ ml: 4 }} />
       </header>
-      <main sx={{ width: "100%", maxWidth: 960, p: [4, 5], mx: "auto" }}>
+      <main sx={{ width: "100%", maxWidth: 1024, p: [4, 5], mx: "auto" }}>
         {children}
       </main>
     </div>

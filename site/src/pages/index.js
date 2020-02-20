@@ -25,9 +25,24 @@ export default function App() {
     }
   `)
   const [query, setQuery] = React.useState("")
+  const [isShowingIconNames, setIsShowingIconNames] = React.useState(false)
   const results = useSearch(data.allIcon.nodes, query, { keys: ["name"] })
 
   const iconsBySize = React.useMemo(() => groupBy(results, "size"), [results])
+
+  React.useEffect(() => {
+    const valueFromLocalStorage = JSON.parse(
+      window.localStorage.getItem("isShowingIconNames")
+    )
+
+    if (valueFromLocalStorage) {
+      setIsShowingIconNames(valueFromLocalStorage)
+    }
+  }, [])
+
+  React.useEffect(() => {
+    window.localStorage.setItem("isShowingIconNames", isShowingIconNames)
+  }, [isShowingIconNames])
 
   return (
     <Layout>
@@ -39,13 +54,24 @@ export default function App() {
           gridGap: 5,
         }}
       >
-        <Input
-          value={query}
-          onChange={event => setQuery(event.target.value)}
-          type="search"
-          placeholder="Search icons..."
-          sx={{ p: 3, bg: "muted", borderColor: "border" }}
-        />
+        <div>
+          <Input
+            value={query}
+            onChange={event => setQuery(event.target.value)}
+            type="search"
+            placeholder="Search icons..."
+            sx={{ p: 3, bg: "muted", borderColor: "border" }}
+          />
+          <label sx={{ display: "inline-block", fontSize: 1, mt: 3 }}>
+            <input
+              type="checkbox"
+              checked={isShowingIconNames}
+              onChange={event => setIsShowingIconNames(event.target.checked)}
+              sx={{ mr: 2, ml: 0, my: 0, p: 0 }}
+            />
+            Show icon names
+          </label>
+        </div>
         {Object.entries(iconsBySize).length > 0 ? (
           Object.entries(iconsBySize).map(([size, icons]) => (
             <div key={size}>
@@ -56,7 +82,10 @@ export default function App() {
                 sx={{
                   display: "grid",
                   gridGap: 4,
-                  gridTemplateColumns: `repeat(auto-fill, ${size}px)`,
+
+                  gridTemplateColumns: isShowingIconNames
+                    ? "repeat(auto-fill, minmax(160px, 1fr))"
+                    : `repeat(auto-fill, ${size}px)`,
                 }}
               >
                 {icons.map(icon => (
@@ -66,16 +95,26 @@ export default function App() {
                     arrow={true}
                     arrowType="round"
                     delay={300}
+                    enabled={!isShowingIconNames}
                   >
                     <Link
                       to={`/${icon.slug}`}
-                      sx={{ display: "flex", color: "inherit" }}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
                     >
                       <Icon
                         size={icon.size}
                         viewBox={icon.viewBox}
                         contents={icon.contents}
+                        sx={{ flex: "0 0 auto" }}
                       />
+                      {isShowingIconNames ? (
+                        <span sx={{ ml: 3, fontSize: 1 }}>{icon.name}</span>
+                      ) : null}
                     </Link>
                   </Tooltip>
                 ))}
