@@ -32,7 +32,7 @@
     "preval.macro": "^3.0.0",
     "primer-colors": "^1.0.1",
     "puppeteer": "^2.0.0",
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-feather": "^2.0.3",
